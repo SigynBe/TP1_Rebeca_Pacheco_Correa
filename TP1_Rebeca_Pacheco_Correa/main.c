@@ -74,7 +74,7 @@ void generateBombs(int n, char matrix[][n]){
 //coordenadas correspondentes à linha e coluna e retornar o número de bombas presentes nas coordenadas vizinhas
 
 int n_bombas(int n, int l, int c, char M[][n]){
-
+    
     int count = 0;
     
     if(M[l][c] != '*'){
@@ -100,7 +100,7 @@ int n_bombas(int n, int l, int c, char M[][n]){
         if(l+1 < n && M[l+1][c] == '*'){
             count++;
         }
-        if(l-1 >= n && M[l-1][c] == '*'){
+        if(l-1 >= 0 && M[l-1][c] == '*'){
             count++;
         }
         if(count != 0){
@@ -148,13 +148,13 @@ void toPlay(int n, char matrixInterface[][n], char matrixAnswer[][n], int line, 
             imprime_mat(n, matrixInterface);
             printf("\n");
         }else{
-//            for (int lineWinner = 0; lineWinner < n; lineWinner++){
-//                for (int columnWinner = 0; columnWinner < n; columnWinner++) {
-//                    if(matrixInterface[lineWinner][columnWinner] == '?'){
-//                        count++;
-//                    }
-//                }
-//            }
+            for (int lineWinner = 0; lineWinner < n; lineWinner++){
+                for (int columnWinner = 0; columnWinner < n; columnWinner++) {
+                    if(matrixInterface[lineWinner][columnWinner] == '?'){
+                        count++;
+                    }
+                }
+            }
             if (count == compare) {
                 printf("PARABENS! VOCE VENCEU!");
                 imprime_mat(n, matrixAnswer);
