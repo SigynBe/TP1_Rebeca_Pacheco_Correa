@@ -117,7 +117,7 @@ void toPlay(int n, char matrixInterface[][n], char matrixAnswer[][n], int line, 
     
     int store;
     int count = 0;
-    int compare = 0.2 * (n*n);
+    int compare = (0.2 * (n*n)) + 1;
     
     char storeBombs;
     
@@ -155,8 +155,10 @@ void toPlay(int n, char matrixInterface[][n], char matrixAnswer[][n], int line, 
                     }
                 }
             }
+            
             if (count == compare) {
                 printf("PARABENS! VOCE VENCEU!");
+                printf("\n");
                 imprime_mat(n, matrixAnswer);
             }else{
                 store = n_bombas(n, line-1, column-1, matrixAnswer);
